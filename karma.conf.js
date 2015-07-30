@@ -18,7 +18,7 @@ module.exports = function(config) {
       'bower_components/jquery/dist/jquery.min.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'src/ia-unique-id.js',
+      'src/ia-unique-ids.js',
       'src/**/*.spec.js'
     ],
 

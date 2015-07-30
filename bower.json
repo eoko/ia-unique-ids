@@ -1,11 +1,11 @@
 {
-  "name": "ia.uniqueId",
+  "name": "ia.uniqueIds",
   "version": "0.0.0",
   "authors": [
     "Éric Ortega <eric.ortega@eoko.fr>"
   ],
   "description": "AngularJS directive that rewrite ids to make sure they are unique",
-  "main": "src/ia-unique-id.js",
+  "main": "src/ia-unique-ids.js",
   "keywords": [
     "angular",
     "AngularJS",
