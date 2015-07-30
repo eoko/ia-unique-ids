@@ -1,0 +1,29 @@
+{
+  "name": "ia.uniqueId",
+  "version": "0.0.0",
+  "authors": [
+    "Éric Ortega <eric.ortega@eoko.fr>"
+  ],
+  "description": "AngularJS directive that rewrite ids to make sure they are unique",
+  "main": "src/ia-unique-id.js",
+  "keywords": [
+    "angular",
+    "AngularJS",
+    "directive",
+    "html",
+    "id"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "angular-mocks": "~1.4.3",
+    "angular": "~1.4.3"
+  }
+}

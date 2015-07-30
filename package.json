@@ -1,0 +1,25 @@
+{
+  "name": "ia.uniqueId",
+  "version": "0.0.0",
+  "description": "AngularJS directive that rewrites ids to make sure they are unique",
+  "main": "ia-unique-id.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "karma": "^0.13.3",
+    "jasmine-core": "^2.3.4",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6"
+  },
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+  "keywords": [
+    "angular",
+    "directive",
+    "html",
+    "id"
+  ],
+  "author": "Éric Ortega <eric.ortega@eoko.fr>",
+  "license": "ISC"
+}
