@@ -36,6 +36,14 @@
 				link: linkDescribedBy
 			};
 		})
+
+		.directive('ariaLabelledby', function() {
+			return {
+				restrict: 'A',
+				require: '^?iaUids',
+				link: linkLabelledBy
+			};
+		})
 	;
 
 	var next = 1;
@@ -78,6 +86,12 @@
 	function linkDescribedBy(scope, el, attrs, uids) {
 		if (uids) {
 			el.attr('aria-describedby', uids.id(attrs['ariaDescribedby']));
+		}
+	}
+
+	function linkLabelledBy(scope, el, attrs, uids) {
+		if (uids) {
+			el.attr('aria-labelledby', uids.id(attrs['ariaLabelledby']));
 		}
 	}
 })();
