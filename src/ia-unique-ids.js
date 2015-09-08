@@ -73,7 +73,12 @@
 
 	function linkId(scope, el, attrs, uids) {
 		if (uids) {
-			el.attr('id', uids.id(attrs['id']));
+			var original = attrs['id'],
+				id = uids.id(original);
+			el.attr({
+				id: id,
+				'role-id': original
+			});
 		}
 	}
 

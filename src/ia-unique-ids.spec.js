@@ -77,6 +77,25 @@ describe('ia unique ids', function() {
 		expect(bar).not.toEqual(bar2);
 	});
 
+	it('stores the original id in role-id attribute', function() {
+		var element = $compile(
+			[
+				'<div id="test">',
+					'<div ia-uids="prefix">',
+						'<span test1 id="foo"></span>',
+						'<span test2 id="bar"></span>',
+					'</div>',
+				'</div>'
+			].join('')
+		)($rootScope);
+
+		$rootScope.$digest();
+
+		expect(element.find('[test1]').attr('role-id')).toEqual('foo');
+
+		expect(element.find('[test2]').attr('role-id')).toEqual('bar');
+	});
+
 	it('does not replace ids outside of a uids group', function() {
 		var element = $compile(
 			[
@@ -158,6 +177,39 @@ describe('ia unique ids', function() {
 			.toEqual(element.find('[test2-1label]').attr('aria-describedby'));
 		expect(element.find('[test2-2]').attr('id'))
 			.toEqual(element.find('[test2-2label]').attr('aria-describedby'));
+	});
+
+	it('replaces aria-labelledby value with matching ids', function() {
+		var element = $compile(
+			[
+				'<div>',
+					'<div ia-uids>',
+						'<span test1 id="foo"></span>',
+						'<span test2 id="bar"></span>',
+						'<label test1label aria-labelledby="foo"></label>',
+						'<label test2label aria-labelledby="bar"></label>',
+					'</div>',
+					'<div ia-uids>',
+						'<span test2-1 id="foo"></span>',
+						'<span test2-2 id="bar"></span>',
+						'<label test2-1label aria-labelledby="foo"></label>',
+						'<label test2-2label aria-labelledby="bar"></label>',
+					'</div>',
+				'</div>'
+			].join('')
+		)($rootScope);
+
+		$rootScope.$digest();
+
+		expect(element.find('[test1]').attr('id'))
+			.toEqual(element.find('[test1label]').attr('aria-labelledby'));
+		expect(element.find('[test2]').attr('id'))
+			.toEqual(element.find('[test2label]').attr('aria-labelledby'));
+
+		expect(element.find('[test2-1]').attr('id'))
+			.toEqual(element.find('[test2-1label]').attr('aria-labelledby'));
+		expect(element.find('[test2-2]').attr('id'))
+			.toEqual(element.find('[test2-2label]').attr('aria-labelledby'));
 	});
 
 	it('can use an optionnal prefix', function() {
