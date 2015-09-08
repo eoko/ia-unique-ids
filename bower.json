@@ -1,5 +1,5 @@
 {
-  "name": "ia-unique-ids",
+  "name": "ia.unique-ids",
   "version": "0.1.0",
   "authors": [
     "Éric Ortega <eric.ortega@eoko.fr>"
@@ -24,6 +24,6 @@
   "devDependencies": {
     "jquery": "~2.1.4",
     "angular-mocks": "~1.4.3",
-    "angular": "~1.4.3"
+    "angular": "1.x"
   }
 }
